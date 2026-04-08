@@ -110,7 +110,7 @@ class MovieSessionDetailSerializer(MovieSessionSerializer):
         fields = ("id", "show_time", "movie", "cinema_hall", "taken_places", )
 
 
-class TickeDetailSerializer(TicketSerializer):
+class TicketDetailSerializer(TicketSerializer):
     movie_session = MovieSessionListSerializer(
         many=False,
         read_only=True,
@@ -142,7 +142,7 @@ class OrderSerializer(serializers.ModelSerializer):
 
 
 class OrderListSerializer(OrderSerializer):
-    tickets = TickeDetailSerializer(
+    tickets = TicketDetailSerializer(
         many=True,
         read_only=True,
     )
